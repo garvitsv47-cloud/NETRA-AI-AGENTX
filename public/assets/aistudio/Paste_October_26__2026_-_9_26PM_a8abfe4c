@@ -1,0 +1,1321 @@
+# ROLE AND OBJECTIVE
+
+Act as a team of senior full-stack engineers, AI/ML researchers, geospatial engineers, logistics industry experts, autonomous agent developers, and enterprise SaaS designers.
+
+Your task is to **DESIGN, DEVELOP, INTEGRATE, AND RUN** a complete, professional, hackathon-ready web application named:
+
+# NETRA — AI-Powered Freight Corridor Intelligence & Decision-Support Platform
+
+**Tagline:** Predict. Detect. Analyze. Optimize. Recommend.
+
+NETRA is designed for Indian logistics companies, freight operators, fleet managers, and transportation control towers.
+
+The platform must enable logistics companies to monitor freight corridors, manage vehicles and shipments, predict disruptions, optimize routes, simulate emergencies, and receive intelligent operational recommendations.
+
+This project is being developed for a national-level hackathon.
+
+The application must be technically convincing, visually professional, and functional during a live demonstration.
+
+**CRITICAL INSTRUCTION:**
+
+Build the actual working application.
+
+Do not merely describe the architecture or generate a landing page.
+
+Implement the frontend, data models, business logic, backend services where supported, AI integrations, and interactive workflows.
+
+Use reasonable defaults without asking unnecessary questions.
+
+Prioritize a complete, stable prototype over an excessively complicated architecture.
+
+---
+
+# 1. PRODUCT VISION
+
+NETRA solves five interconnected problems in India's freight logistics ecosystem:
+
+1. **Reactive disruption management:** Logistics operators often respond after congestion, accidents, or weather events affect their shipments.
+
+2. **Poor shipment-level visibility:** Companies cannot easily identify which deliveries will be affected by a corridor disruption.
+
+3. **Inefficient route decisions:** Conventional navigation does not necessarily optimize fleet-wide decisions against delivery deadlines, operating costs, and disruption risks.
+
+4. **Fragmented operational information:** Shipment records, vehicle locations, company policies, weather information, and corridor intelligence are often disconnected.
+
+5. **Limited decision support:** Operators need actionable recommendations, not simply alerts.
+
+NETRA should transform this workflow into:
+
+**DATA → PREDICTION → IMPACT ANALYSIS → OPTIMIZATION → ACTIONABLE RECOMMENDATION**
+
+The primary differentiator is:
+
+**NETRA doesn't just find the best route for one truck. It helps logistics companies make better decisions across their entire freight network.**
+
+---
+
+# 2. TECHNOLOGY STACK
+
+Use a technology stack compatible with Google AI Studio Build mode.
+
+## Frontend
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+- Recharts
+- React Router
+
+## Maps and Geospatial
+
+- Leaflet or MapLibre GL JS
+- OpenStreetMap
+- OSRM-compatible routing service
+- Geocoding service for location search
+- GeoJSON route geometry
+
+## AI and Agent
+
+- Gemini API
+- Gemini function calling
+- Retrieval-Augmented Generation
+- Structured JSON outputs
+- Grounded operational recommendations
+
+## AI/ML
+
+- Explainable disruption-risk scoring
+- Historical pattern analysis
+- Shipment delay estimation
+- Risk-factor analysis
+- Lightweight ML inference where a suitable trained model is available
+
+## Data Storage
+
+Prefer a working server-side database if the environment supports it.
+
+Otherwise, implement a well-structured local demo data layer with persistent browser storage.
+
+Use one centralized data model throughout the application.
+
+Do not create disconnected datasets for each page.
+
+## Backend
+
+Use server-side functions or API routes where supported.
+
+Never expose secret API keys in frontend code.
+
+Do not assume that a frontend-only application can securely store private credentials.
+
+If backend functionality is unavailable, implement a clear integration boundary and explain what requires deployment configuration.
+
+---
+
+# 3. DESIGN SYSTEM — EXTREMELY IMPORTANT
+
+NETRA must look like a real enterprise logistics platform.
+
+It should NOT resemble a generic AI-generated website.
+
+## Visual Style
+
+Create a minimalist, elegant, professional B2B SaaS dashboard.
+
+Use a light theme by default.
+
+### Colors
+
+Main background: `#F8FAFC`
+
+Sidebar: `#111827`
+
+Primary text: `#1F2937`
+
+Secondary text: `#64748B`
+
+Primary accent: `#52677D`
+
+Borders: `#E2E8F0`
+
+Cards: `#FFFFFF`
+
+Success: `#54846B`
+
+Warning: `#B58A45`
+
+Critical: `#B85C5C`
+
+### Typography
+
+Use Inter consistently throughout the application.
+
+### Layout
+
+- Fixed or collapsible left sidebar.
+- Professional top navigation.
+- Spacious but information-dense dashboard.
+- Consistent card dimensions.
+- Compact operational tables.
+- Clean charts.
+- Minimal shadows.
+- Subtle borders.
+- Clear information hierarchy.
+
+### Strictly Avoid
+
+- Vibrant neon colors.
+- Excessive gradients.
+- Glassmorphism.
+- Animated backgrounds.
+- Oversized rounded cards.
+- Excessive emojis.
+- Unnecessary illustrations.
+- Fake statistics.
+- Generic AI-generated hero sections.
+- Horizontal scrolling.
+- Broken navigation.
+- Placeholder buttons.
+
+Every visible interactive component should perform a meaningful action.
+
+---
+
+# 4. APPLICATION NAVIGATION
+
+Create the following modules in the sidebar:
+
+1. Overview
+2. Freight Corridors
+3. Fleet Management
+4. Shipments
+5. Route Optimization
+6. Risk Intelligence
+7. Digital Twin Simulator
+8. NETRA AI Agent
+9. Knowledge Base
+10. Analytics & Reports
+11. Company Settings
+
+Add a simplified Driver View accessible from the relevant shipment or fleet pages.
+
+Use professional line icons.
+
+Include:
+
+- NETRA branding.
+- Current company name.
+- Global search.
+- Notifications.
+- Current date and time.
+- Profile menu.
+- Demo environment indicator.
+
+All navigation must function.
+
+---
+
+# 5. LOGISTICS COMPANY PORTAL
+
+Create a realistic logistics company workspace.
+
+## Demo Company
+
+**Company:** Bharat Freight Logistics Pvt. Ltd.
+
+**Industry:** Road freight transportation.
+
+**Operating Region:** India.
+
+Create deterministic demonstration data containing:
+
+- 25 vehicles.
+- 12 drivers.
+- 40 shipments.
+- 8 major freight corridors.
+- 10 historical disruptions.
+- 5 active alerts.
+
+All sample records must be internally consistent.
+
+Use realistic Indian cities, locations, vehicle IDs, shipment IDs, and operating scenarios.
+
+## Company Dashboard
+
+The logistics company should be able to:
+
+- Add shipments.
+- Edit shipments.
+- Delete shipments.
+- Assign vehicles.
+- Assign drivers.
+- Update shipment status.
+- Add pickup locations.
+- Add delivery destinations.
+- Add intermediate stops.
+- Set delivery deadlines.
+- View active vehicles.
+- View delayed shipments.
+- View high-risk shipments.
+- Search and filter records.
+
+## Shipment Form
+
+Fields:
+
+- Shipment ID.
+- Customer name.
+- Cargo type.
+- Cargo weight.
+- Origin.
+- Destination.
+- Intermediate stops.
+- Pickup date.
+- Expected delivery date.
+- Assigned vehicle.
+- Assigned driver.
+- Delivery priority.
+- Estimated shipment value.
+- Delay penalty per hour.
+- Current status.
+
+Support multiple pickup and delivery locations.
+
+Changes should persist across navigation and page refreshes.
+
+For the prototype, use one demo company workspace.
+
+Structure the data model so multi-company support can be added later.
+
+Do not claim production-grade company isolation without implementing authentication and authorization.
+
+---
+
+# 6. PROFESSIONAL COMMAND CENTER
+
+Build a sophisticated operations dashboard.
+
+## KPI Cards
+
+Display:
+
+1. Active Shipments.
+2. Active Vehicles.
+3. High-Risk Corridors.
+4. Predicted Delays.
+5. On-Time Delivery Percentage.
+6. Estimated Financial Exposure.
+
+All values must be calculated from the underlying dataset.
+
+Do not generate random statistics.
+
+## Dashboard Layout
+
+### Upper Section
+
+Six compact KPI cards.
+
+### Main Section
+
+Large interactive freight corridor map.
+
+Beside the map, display:
+
+- Active disruptions.
+- Critical shipment alerts.
+- Weather-related warnings.
+- Recommended operational actions.
+
+### Lower Section
+
+Include:
+
+- Shipment status table.
+- Corridor health chart.
+- Risk distribution chart.
+- Delivery performance chart.
+- Recent operational activity.
+
+## Interactive Behavior
+
+Clicking a shipment opens its details.
+
+Clicking a vehicle highlights its route.
+
+Clicking a corridor opens its risk analysis.
+
+Clicking an alert navigates to the affected shipment or corridor.
+
+Add a prominent:
+
+**RUN NETRA DEMO**
+
+button.
+
+This launches the predefined hackathon demonstration scenario.
+
+---
+
+# 7. FREIGHT CORRIDOR MAP — CORE FEATURE
+
+This is one of NETRA's most important components.
+
+Create a functional interactive map of India.
+
+Use OpenStreetMap-based map tiles.
+
+Display major freight corridors:
+
+- Delhi–Mumbai.
+- Delhi–Jaipur.
+- Mumbai–Pune.
+- Delhi–Kolkata.
+- Chennai–Bengaluru.
+- Bengaluru–Hyderabad.
+- Ahmedabad–Mumbai.
+- Lucknow–Delhi.
+
+## Map Requirements
+
+Use actual road-network geometry wherever the routing service is available.
+
+Do not draw straight lines between cities and present them as road routes.
+
+Display:
+
+- Freight corridors.
+- Vehicle locations.
+- Origin markers.
+- Destination markers.
+- Intermediate stops.
+- Route geometry.
+- Risk indicators.
+- Active disruption markers.
+
+## Multiple-Location Routing
+
+Allow operators to select:
+
+**Origin → Stop 1 → Stop 2 → Stop 3 → Destination**
+
+Example:
+
+Delhi → Jaipur → Ahmedabad → Mumbai.
+
+Users should be able to:
+
+- Search for locations.
+- Select locations from suggestions.
+- Add multiple stops.
+- Remove stops.
+- Reorder stops.
+- Calculate routes.
+- View route details.
+
+## Route Information
+
+Display:
+
+- Total distance.
+- Estimated travel time.
+- Number of stops.
+- Estimated fuel consumption.
+- Estimated fuel cost.
+- Estimated CO₂ emissions.
+- Disruption-risk score.
+- Estimated arrival time.
+
+Use routing-service results where available.
+
+For fuel and emissions calculations, use documented assumptions.
+
+If an external routing service fails, display a clear error and use cached road geometry where available.
+
+Do not silently replace real road routes with straight lines.
+
+## Truck Markers
+
+Display simulated truck locations along routes.
+
+Clicking a truck should show:
+
+- Vehicle number.
+- Driver name.
+- Shipment ID.
+- Current route.
+- Destination.
+- ETA.
+- Risk status.
+
+Simulated movement must be labeled appropriately.
+
+---
+
+# 8. ROUTE OPTIMIZATION ENGINE
+
+Create a functional route comparison and optimization module.
+
+## Inputs
+
+- Origin.
+- Destination.
+- Intermediate stops.
+- Vehicle type.
+- Fuel efficiency.
+- Fuel price.
+- Delivery deadline.
+- Route preference.
+
+## Optimization Preferences
+
+Allow the operator to choose:
+
+1. Fastest Route.
+2. Lowest Cost Route.
+3. Lowest Risk Route.
+4. Balanced Route.
+
+## Outputs
+
+Compare available routes using:
+
+- Distance.
+- Estimated travel time.
+- Fuel cost.
+- Disruption risk.
+- SLA impact.
+- Estimated CO₂ emissions.
+
+Display alternative routes on the map using distinguishable muted colors.
+
+## Multi-Stop Optimization
+
+Implement a practical route-ordering heuristic for multiple stops.
+
+Clearly distinguish:
+
+- Fixed-order routing.
+- Optimized stop ordering.
+
+Do not claim mathematically optimal results when using a heuristic.
+
+## Fleet-Level Decision Intelligence
+
+When several shipments are affected by a disruption, recommend coordinated actions.
+
+For example:
+
+- Reroute urgent shipments.
+- Delay departure of nonurgent shipments.
+- Maintain unaffected routes.
+- Prioritize shipments with strict delivery deadlines.
+
+Recommendations should be generated from actual application data and calculation results.
+
+---
+
+# 9. AI/ML DISRUPTION PREDICTION ENGINE
+
+Create a risk intelligence module.
+
+## Inputs
+
+- Weather severity.
+- Rainfall intensity.
+- Traffic congestion.
+- Historical incident frequency.
+- Road infrastructure condition.
+- Time of day.
+- Corridor characteristics.
+
+## Risk Scoring
+
+Calculate a score between 0 and 100.
+
+Categories:
+
+0–34: Low Risk.
+
+35–69: Moderate Risk.
+
+70–100: High Risk.
+
+Display:
+
+- Risk score.
+- Risk classification.
+- Primary contributing factors.
+- Estimated delay.
+- Affected shipments.
+- Recommended actions.
+
+## Explainable AI
+
+Show why a corridor receives a particular score.
+
+Example:
+
+Corridor: Delhi–Mumbai.
+
+Risk Score: 78/100.
+
+Contributing factors:
+
+- Heavy rainfall.
+- Elevated congestion.
+- Historical incident frequency.
+- Limited route flexibility.
+
+This example is illustrative.
+
+## AI/ML Implementation
+
+Implement a transparent weighted risk-scoring engine as the reliable baseline.
+
+Structure the code so a trained machine-learning model can replace or supplement it.
+
+If suitable labeled historical data is available, implement a lightweight trained model.
+
+Do not train on fabricated labels and describe the resulting predictions as scientifically validated.
+
+Do not invent model accuracy statistics.
+
+## Risk Dashboard
+
+Include:
+
+- Corridor risk rankings.
+- Risk trend charts.
+- Shipment exposure.
+- Delay estimates.
+- Risk-factor breakdown.
+- Forecast horizon selection.
+
+Support:
+
+- Current conditions.
+- Next 30 minutes.
+- Next 60 minutes.
+- Next 3 hours.
+
+When actual forecasts are unavailable, clearly label the results as scenario estimates.
+
+---
+
+# 10. NETRA AUTONOMOUS AI AGENT
+
+Build an intelligent logistics operations agent powered by Gemini.
+
+This must be more than a generic chatbot.
+
+The agent should understand logistics questions, retrieve relevant data, call operational tools, and produce actionable recommendations.
+
+## Agent Tools
+
+Implement functions equivalent to:
+
+`getActiveShipments()`
+
+`getShipmentDetails(shipmentId)`
+
+`getCorridorRisk(corridorId)`
+
+`getHighRiskShipments()`
+
+`calculateRoute(origin, destination, waypoints)`
+
+`compareRoutes(routeOptions)`
+
+`simulateDisruption(corridorId, scenario)`
+
+`retrieveCompanyKnowledge(query)`
+
+`generateOperationalSummary()`
+
+## Agent Workflow
+
+USER QUESTION
+
+↓
+
+INTENT ANALYSIS
+
+↓
+
+TOOL SELECTION
+
+↓
+
+DATA RETRIEVAL
+
+↓
+
+RISK AND ROUTE ANALYSIS
+
+↓
+
+RECOMMENDATION GENERATION
+
+↓
+
+EXPLAINABLE RESPONSE
+
+## Example Conversation
+
+User:
+
+"Which of my shipments are at the highest risk today?"
+
+NETRA should:
+
+1. Retrieve active shipments.
+2. Analyze associated corridor risks.
+3. Rank affected shipments.
+4. Estimate delay exposure.
+5. Recommend actions.
+
+Another example:
+
+"Find a safer route for shipment SHP-1024."
+
+NETRA should:
+
+1. Retrieve the shipment.
+2. Identify its current route.
+3. Retrieve the corridor risk.
+4. Calculate available alternatives.
+5. Compare time, cost, and risk.
+6. Recommend an appropriate route.
+
+## Agent Interface
+
+Create a professional three-column interface.
+
+LEFT:
+
+Conversation history.
+
+CENTER:
+
+Chat interface.
+
+RIGHT:
+
+Operational context and relevant shipment details.
+
+## Suggested Questions
+
+- Which shipments are at risk?
+- Analyze the Delhi–Mumbai corridor.
+- Find a safer route for SHP-1024.
+- What happens if NH48 is closed?
+- Summarize today's logistics risks.
+- Which shipment should be prioritized?
+
+## Agent Safety
+
+The agent must not:
+
+- Invent shipment records.
+- Invent vehicle locations.
+- Fabricate route calculations.
+- Claim unavailable data is live.
+- Modify shipments without operator confirmation.
+- Reveal another company's private documents.
+
+Provide a visible distinction between recommendations and executed actions.
+
+If Gemini cannot be configured, display a clear integration status.
+
+---
+
+# 11. RAG-POWERED KNOWLEDGE BASE
+
+Implement a Retrieval-Augmented Generation pipeline.
+
+Logistics companies should be able to upload operational documents.
+
+## Supported Documents
+
+- PDF.
+- TXT.
+- DOCX where supported.
+
+Examples:
+
+- Delivery SLA policies.
+- Driver safety guidelines.
+- Freight operating procedures.
+- Company logistics manuals.
+- Route planning policies.
+- Customer delivery agreements.
+
+## RAG Architecture
+
+DOCUMENT UPLOAD
+
+↓
+
+TEXT EXTRACTION
+
+↓
+
+DOCUMENT CHUNKING
+
+↓
+
+TEXT EMBEDDINGS OR LOCAL VECTORIZATION
+
+↓
+
+VECTOR SIMILARITY SEARCH
+
+↓
+
+RELEVANT DOCUMENT CHUNKS
+
+↓
+
+GEMINI RESPONSE GENERATION
+
+↓
+
+SOURCE-CITED ANSWER
+
+## Implementation
+
+Use a lightweight retrieval pipeline appropriate for the available environment.
+
+Prefer embedding-based retrieval when a supported embedding service is available.
+
+Otherwise, implement TF-IDF or another local retrieval method.
+
+Do not claim semantic embedding retrieval if only keyword-based retrieval is implemented.
+
+Store:
+
+- Document name.
+- Document type.
+- Upload date.
+- Extracted text.
+- Text chunks.
+- Retrieval metadata.
+
+## Knowledge Base Interface
+
+Allow users to:
+
+- Upload documents.
+- View uploaded documents.
+- Delete documents.
+- Search documents.
+- Ask questions.
+- View cited source passages.
+
+## Example
+
+User:
+
+"What is our company's policy for delayed high-priority shipments?"
+
+NETRA retrieves the relevant company policy and generates an answer grounded in that document.
+
+Show the source document and supporting excerpt.
+
+Never fabricate citations.
+
+If the document does not contain the answer, state that clearly.
+
+---
+
+# 12. DIGITAL TWIN DISRUPTION SIMULATOR
+
+Build an interactive logistics disruption simulator.
+
+This is a flagship feature.
+
+## Scenarios
+
+1. Heavy Rainfall.
+2. Highway Closure.
+3. Severe Congestion.
+4. Vehicle Breakdown.
+5. Accident-Related Road Blockage.
+
+## User Inputs
+
+- Freight corridor.
+- Scenario type.
+- Severity.
+- Duration.
+- Number of affected vehicles.
+
+## Simulation Workflow
+
+When the user clicks RUN SIMULATION:
+
+1. Identify affected shipments.
+2. Recalculate corridor risk.
+3. Estimate delays.
+4. Calculate financial exposure.
+5. Evaluate alternative routes.
+6. Generate mitigation recommendations.
+7. Calculate expected improvement.
+
+## Before vs After Comparison
+
+Display:
+
+| Metric | Before Intervention | After Intervention |
+|---|---|---|
+| At-Risk Shipments | Calculated | Calculated |
+| Aggregate Delay | Calculated | Calculated |
+| Financial Exposure | Calculated | Calculated |
+| Critical Alerts | Calculated | Calculated |
+
+Do not hardcode unrelated results.
+
+The simulation should use consistent formulas.
+
+## Visualizations
+
+Include:
+
+- Before/after bar charts.
+- Route comparison.
+- Affected shipment list.
+- Financial impact summary.
+- Risk reduction indicators.
+
+Add:
+
+**RESET SIMULATION**
+
+and
+
+**GENERATE ACTION PLAN**
+
+buttons.
+
+The action plan should be grounded in simulation results.
+
+---
+
+# 13. EMERGENCY RESPONSE INTELLIGENCE
+
+Add a dedicated safety feature.
+
+Display:
+
+- Accident-risk hotspots.
+- Nearby hospitals.
+- Incident locations.
+- Estimated emergency travel time.
+- Emergency response recommendations.
+
+Create a simulated emergency-response workflow.
+
+An operator should be able to:
+
+1. Review a reported incident.
+2. Inspect its location.
+3. Identify nearby hospitals.
+4. Prepare an emergency notification.
+5. Confirm the simulated response.
+
+Do not automatically dispatch real emergency services.
+
+Clearly label emergency dispatch as a prototype simulation.
+
+Distinguish predicted accident risk from confirmed accidents.
+
+---
+
+# 14. ANALYTICS AND BUSINESS IMPACT
+
+Create an enterprise analytics dashboard.
+
+## Metrics
+
+- Total shipments.
+- On-time delivery rate.
+- Average estimated delay.
+- High-risk shipments.
+- Corridor reliability.
+- Estimated fuel expenditure.
+- Estimated financial exposure.
+- Potential savings from optimization.
+
+## Charts
+
+Use:
+
+- Line charts.
+- Bar charts.
+- Donut charts.
+- Trend indicators.
+
+## Filters
+
+- Date range.
+- Corridor.
+- Shipment status.
+- Vehicle.
+- Risk category.
+
+## Decision Impact Analyzer
+
+Compare:
+
+**Without NETRA Intervention**
+
+versus
+
+**With NETRA Recommendations**
+
+Show estimated differences in:
+
+- Delivery delays.
+- Financial exposure.
+- At-risk shipments.
+- Route efficiency.
+- Fuel consumption.
+
+All calculations should use transparent assumptions.
+
+Clearly label simulation results as estimates rather than verified real-world savings.
+
+---
+
+# 15. DRIVER INTERFACE
+
+Create a simplified mobile-friendly interface for truck drivers.
+
+Display:
+
+- Assigned vehicle.
+- Active shipment.
+- Current route.
+- Next delivery stop.
+- Estimated arrival.
+- Route warnings.
+- Emergency contact details.
+
+Keep the interface simple and readable.
+
+Use large buttons.
+
+Avoid requiring complicated interactions while driving.
+
+---
+
+# 16. COMPANY SETTINGS
+
+Create a company settings page.
+
+Include:
+
+- Company profile.
+- Operating region.
+- Fleet information.
+- Default fuel price.
+- Default vehicle fuel efficiency.
+- Risk alert threshold.
+- Delivery delay penalty assumptions.
+- Notification preferences.
+- Demo environment settings.
+
+Changes should update the relevant calculations throughout the application.
+
+---
+
+# 17. BUILT-IN HACKATHON DEMO MODE
+
+This is extremely important.
+
+Create a prominent:
+
+**RUN NETRA DEMO**
+
+button.
+
+The button should launch a guided demonstration.
+
+## Scenario: NH48 Freight Disruption
+
+A logistics company has multiple active shipments travelling between Delhi and Mumbai.
+
+A severe rainfall scenario increases the risk of congestion and delays.
+
+NETRA must demonstrate the following sequence:
+
+### Stage 1 — Monitor
+
+Show the company's freight operations dashboard.
+
+Highlight active vehicles and shipments.
+
+### Stage 2 — Predict
+
+Display an elevated disruption-risk score for the affected corridor.
+
+Explain the contributing factors.
+
+### Stage 3 — Analyze
+
+Identify affected shipments.
+
+Estimate delivery delays and financial exposure.
+
+### Stage 4 — Optimize
+
+Calculate available alternative routes.
+
+Recommend coordinated fleet-level actions.
+
+### Stage 5 — Explain
+
+Open the AI agent.
+
+Generate an explanation grounded in the actual scenario data.
+
+### Stage 6 — Demonstrate Impact
+
+Display before-and-after operational metrics.
+
+Highlight estimated reductions in delay and financial exposure.
+
+## Demo Requirements
+
+- The demo must be repeatable.
+- Use deterministic scenario data.
+- Avoid random results.
+- Include Next and Previous controls.
+- Include Reset Demo.
+- Maintain consistent shipment IDs.
+- Clearly label simulated information.
+- Do not depend entirely on external APIs.
+
+This demonstration must work reliably during hackathon judging.
+
+---
+
+# 18. DATA CONSISTENCY
+
+Use one centralized data model.
+
+Suggested entities:
+
+- Company.
+- Vehicle.
+- Driver.
+- Shipment.
+- Freight Corridor.
+- Route.
+- Route Stop.
+- Disruption.
+- Risk Assessment.
+- Simulation.
+- Recommendation.
+- Knowledge Document.
+- Chat Session.
+
+Ensure that:
+
+- Shipment IDs remain consistent.
+- Vehicle assignments remain consistent.
+- Route calculations use the selected locations.
+- Risk scores update affected shipments.
+- Simulation results update impact charts.
+- Agent tools retrieve current application data.
+- Dashboard KPIs reflect actual records.
+
+Do not create disconnected hardcoded statistics.
+
+---
+
+# 19. FUNCTIONAL REQUIREMENTS
+
+Every major feature must be interactive.
+
+## Required Working Actions
+
+- Sidebar navigation.
+- Add shipment.
+- Edit shipment.
+- Delete shipment.
+- Assign vehicle.
+- Search shipment.
+- Filter shipment.
+- Select corridor.
+- Select vehicle.
+- Add route stop.
+- Remove route stop.
+- Reorder route stops.
+- Calculate route.
+- Compare available routes.
+- Run risk analysis.
+- Run disruption simulation.
+- Reset simulation.
+- Upload knowledge document.
+- Search knowledge base.
+- Ask AI agent.
+- Run guided demo.
+- Generate operational summary.
+
+If a feature cannot be implemented fully, provide a clear unavailable state rather than pretending it works.
+
+---
+
+# 20. RESPONSIVENESS AND ACCESSIBILITY
+
+The website must work on:
+
+- Desktop.
+- Laptop.
+- Tablet.
+- Mobile.
+
+Requirements:
+
+- No horizontal overflow.
+- Responsive sidebar.
+- Mobile navigation.
+- Responsive tables.
+- Readable map controls.
+- Accessible form labels.
+- Keyboard navigation.
+- Visible focus states.
+- Clear error messages.
+- Loading indicators.
+- Empty states.
+
+---
+
+# 21. SECURITY
+
+- Never expose API keys in frontend code.
+- Use server-side environment variables.
+- Validate user input.
+- Validate uploaded documents.
+- Restrict file sizes.
+- Avoid executing uploaded content.
+- Handle API failures.
+- Prevent accidental data deletion.
+- Require confirmation for operational changes.
+- Keep company documents isolated where authentication is implemented.
+
+Do not claim production security without implementing and testing it.
+
+---
+
+# 22. PERFORMANCE
+
+Optimize for a smooth live demonstration.
+
+- Lazy-load heavy pages where practical.
+- Avoid unnecessary re-renders.
+- Cache route calculations.
+- Avoid repeated API calls.
+- Use efficient map rendering.
+- Minimize large dependencies.
+- Provide sensible loading states.
+- Keep the interface responsive.
+
+---
+
+# 23. IMPLEMENTATION PRIORITY
+
+Because this is a time-constrained hackathon prototype, prioritize implementation in this order:
+
+**Priority 1 — Must Work**
+
+1. Professional dashboard.
+2. Logistics company workspace.
+3. Shipment management.
+4. Interactive freight map.
+5. Multi-location routing.
+6. Disruption-risk engine.
+
+**Priority 2 — Strong Differentiators**
+
+7. Digital Twin simulator.
+8. Fleet-level route recommendations.
+9. Decision Impact Analyzer.
+10. NETRA AI Agent.
+
+**Priority 3 — Advanced Intelligence**
+
+11. RAG knowledge base.
+12. Emergency-response simulation.
+13. Driver interface.
+14. Advanced analytics.
+
+Implement all feasible features, but do not compromise core functionality to add secondary features.
+
+---
+
+# 24. FINAL QUALITY ASSURANCE
+
+Before declaring completion:
+
+1. Verify the application starts.
+2. Verify all navigation links.
+3. Verify dashboard rendering.
+4. Verify map loading.
+5. Verify route calculations.
+6. Verify multiple stops.
+7. Verify shipment creation.
+8. Verify shipment editing.
+9. Verify risk-score calculations.
+10. Verify simulation behavior.
+11. Verify agent API integration.
+12. Verify document upload and retrieval.
+13. Verify analytics consistency.
+14. Verify mobile responsiveness.
+15. Verify error handling.
+16. Verify the guided demo.
+
+Fix compilation errors and obvious runtime problems.
+
+Do not claim a feature passed testing unless it was actually tested.
+
+---
+
+# 25. FINAL DELIVERABLE
+
+Deliver a complete, integrated NETRA web application.
+
+The website must have:
+
+- A professional enterprise dashboard.
+- A realistic logistics company interface.
+- An interactive Indian freight corridor map.
+- Multi-location routing.
+- Explainable disruption-risk analysis.
+- Shipment-level impact assessment.
+- Fleet-level recommendations.
+- A functional Digital Twin simulator.
+- A Gemini-powered AI agent where configured.
+- A document-grounded RAG chatbot.
+- Business impact analytics.
+- A guided hackathon demonstration.
+
+The final application should feel like an actual logistics intelligence product, not a static concept presentation.
+
+**MOST IMPORTANT:**
+
+Do not stop after creating the visual interface.
+
+Implement the underlying functionality and connect the modules.
+
+Use actual calculations and real application data wherever possible.
+
+Clearly distinguish real data, calculated estimates, and simulations.
+
+Make the website simple, elegant, professional, technically credible, and impressive during a live demonstration.
+
+**NOW BUILD THE COMPLETE NETRA APPLICATION.**

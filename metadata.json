@@ -1,0 +1,6 @@
+{
+  "name": "NETRA — Freight Corridor Intelligence Platform",
+  "description": "Predict. Detect. Analyze. Optimize. Recommend. AI-powered freight corridor intelligence, multi-location routing, disruption prediction, digital twin simulation, and autonomous decision support for Indian logistics networks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
